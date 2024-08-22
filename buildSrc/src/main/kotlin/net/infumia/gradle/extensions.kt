@@ -9,7 +9,11 @@ import org.gradle.kotlin.dsl.*
 import org.jetbrains.dokka.gradle.DokkaPlugin
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 
-fun Project.applyKotlin(javaVersion: Int = 8, sources: Boolean = true, javadoc: Boolean = true) {
+fun Project.configureKotlin(
+    javaVersion: Int = 8,
+    sources: Boolean = true,
+    javadoc: Boolean = true
+) {
     apply<DokkaPlugin>()
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
@@ -38,19 +42,14 @@ fun Project.applyKotlin(javaVersion: Int = 8, sources: Boolean = true, javadoc: 
 }
 
 // TODO: portlek, Implement the publishing to gradle portal.
-fun Project.publish(
-    // moduleName: String? = null,
-    javaVersion: Int = 8,
-    sources: Boolean = true,
-    javadoc: Boolean = true
+fun Project.configurePublish(
+    // moduleName: String? = null
 ) {
-    applyKotlin(javaVersion, sources, javadoc)
-
     // val projectName = "templator${if (moduleName == null) "" else "-$moduleName"}"
     // val signRequired = project.hasProperty("sign-required")
 }
 
-fun Project.spotless() {
+fun Project.configureSpotless() {
     val subProjects = subprojects.map { it.projectDir.toRelativeString(projectDir) }
 
     repositories.mavenCentral()

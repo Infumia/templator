@@ -1,3 +1,8 @@
-import net.infumia.gradle.publish
+import net.infumia.gradle.configureKotlin
+import net.infumia.gradle.configurePublish
 
-publish()
+plugins { `kotlin-dsl` }
+
+configureKotlin()
+
+configurePublish()

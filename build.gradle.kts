@@ -1,3 +1,3 @@
-import net.infumia.gradle.spotless
+import net.infumia.gradle.configureSpotless
 
-spotless()
+configureSpotless()
