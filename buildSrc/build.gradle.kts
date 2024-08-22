@@ -1,4 +1,4 @@
-plugins { alias(libs.plugins.kotlin.dsl) }
+plugins { `kotlin-dsl` }
 
 repositories {
     mavenCentral()
@@ -6,7 +6,9 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.kotlin.plugin)
+    implementation(
+        "org.jetbrains.kotlin.jvm:org.jetbrains.kotlin.jvm.gradle.plugin:${embeddedKotlinVersion}"
+    )
     implementation(libs.dokka.plugin)
     implementation(libs.spotless.plugin)
 }
