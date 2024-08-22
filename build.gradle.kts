@@ -1,7 +1,3 @@
-import net.infumia.gradle.spotless
+import net.infumia.gradle.configureSpotless
 
-plugins { kotlin("jvm") }
-
-repositories { mavenCentral() }
-
-spotless()
+configureSpotless()
