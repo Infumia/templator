@@ -1,2 +1,2 @@
 # templator
-A Gradle plugin that generates project layouts for various kind of project types.
+A Gradle plugin that generates project layouts for different types of projects.
